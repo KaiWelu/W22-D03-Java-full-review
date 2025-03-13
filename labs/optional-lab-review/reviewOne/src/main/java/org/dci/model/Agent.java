@@ -1,17 +1,16 @@
-package org.dci;
+package org.dci.model;
 
-public class Customer implements User{
-
+public class Agent implements User {
     private String name;
     private String mail;
     private String password;
     private boolean isAdmin;
 
-    public Customer(String name, String mail, String password, boolean isAdmin) {
+    public Agent(String name, String mail, String password, boolean isAdmin) {
         this.name = name;
         this.mail = mail;
         this.password = password;
-        this.isAdmin = false;
+        this.isAdmin = true;
     }
 
     public String getName() {
@@ -46,10 +45,11 @@ public class Customer implements User{
         isAdmin = admin;
     }
 
+
     @Override
     public void printUser() {
         System.out.println("Name: " + name + "\n" +
                            "Mail: " + mail + "\n" +
-                           "Role: Customer\n");
+                           "Role: Agent\n");
     }
 }

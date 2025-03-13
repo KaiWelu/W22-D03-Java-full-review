@@ -1,11 +1,13 @@
-package org.dci;
+package org.dci.model;
+
+import org.dci.Status;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public class Ticket {
-    private final String id = UUID.randomUUID().toString();
+    private String id = UUID.randomUUID().toString();
     private final LocalDateTime dateTime = LocalDateTime.now();
     private String title;
     private String description;
@@ -94,5 +96,17 @@ public class Ticket {
 
     public void setAgent(String agent) {
         this.agent = agent;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 }
