@@ -2,10 +2,13 @@ package org.dci;
 
 
 import org.dci.controller.TicketController;
+import org.dci.data.JsonFileHandler;
 import org.dci.model.Ticket;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         TicketController tController = new TicketController();
         tController.addTicket("My head hurts",
@@ -47,6 +50,9 @@ public class Main {
         tController.deleteTicketById(testId);
 
         tController.printAllTickets(true);
+
+        JsonFileHandler fileHandler = new JsonFileHandler();
+        fileHandler.writeToFile(tController.getAllTickets());
 
     }
 }
